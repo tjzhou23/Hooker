@@ -4,15 +4,14 @@
 
 #define CLASS_HOOKER "com/sysu/zhou/libhook/Hooker"
 
-jstring init(JNIEnv *env, jclass type) {
-    std::string hello = "Hello from C++";
-    return env->NewStringUTF(hello.c_str());
+jboolean init(JNIEnv *env, jclass type, jint jsdk, jboolean jdebug) {
+    return true;
 }
 
 static JNINativeMethod  jniHooker[] = {
         {
             "init",
-            "()Ljava/lang/String;",
+            "(IZ)Z",
             (void *)init
         }
 };
