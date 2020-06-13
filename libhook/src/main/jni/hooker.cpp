@@ -4,7 +4,7 @@
 
 #define CLASS_HOOKER "com/sysu/zhou/libhook/Hooker"
 
-jboolean init(JNIEnv *env, jclass type, jint jsdk, jboolean jdebug) {
+jboolean initNative(JNIEnv *env, jclass type, jint jsdk, jboolean jdebug) {
     return true;
 }
 
@@ -12,7 +12,7 @@ static JNINativeMethod  jniHooker[] = {
         {
             "init",
             "(IZ)Z",
-            (void *)init
+            (void *)initNative
         }
 };
 
