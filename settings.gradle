@@ -1,2 +1,3 @@
+include ':libhook'
 include ':app'
 rootProject.name = "Hooker"
